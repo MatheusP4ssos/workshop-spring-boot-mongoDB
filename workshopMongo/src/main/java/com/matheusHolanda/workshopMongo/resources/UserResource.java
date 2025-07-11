@@ -1,0 +1,26 @@
+package com.matheusHolanda.workshopMongo.resources;
+
+import com.matheusHolanda.workshopMongo.domain.User;
+import com.matheusHolanda.workshopMongo.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/users")
+public class UserResource {
+
+    @Autowired
+    private UserService service;
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<User>> findAll() { // Método que retorna uma resposta HTTP contendo uma lista de usuários
+        List<User> list = service.findAll();
+        return ResponseEntity.ok().body(list);   // Retorna a lista como resposta HTTP com status 200 OK
+
+    }
+}
