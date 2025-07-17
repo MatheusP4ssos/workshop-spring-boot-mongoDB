@@ -1,6 +1,5 @@
 package com.matheusHolanda.workshopMongo.entities;
 
-import com.matheusHolanda.workshopMongo.domain.User;
 import com.matheusHolanda.workshopMongo.dto.AuthorDTO;
 
 import java.io.Serializable;
@@ -19,7 +18,7 @@ public class Post implements Serializable {
     public Post(){
     }
 
-    public Post(String id, Date date, String title, String contentn, AuthorDTO author){
+    public Post(String id, Date date, String title, String content, AuthorDTO author){
         this.id = id;
         this.date = date;
         this.title = title;
