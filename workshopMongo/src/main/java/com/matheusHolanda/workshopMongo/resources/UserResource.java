@@ -2,6 +2,7 @@ package com.matheusHolanda.workshopMongo.resources;
 
 import com.matheusHolanda.workshopMongo.domain.User;
 import com.matheusHolanda.workshopMongo.dto.UserDTO;
+import com.matheusHolanda.workshopMongo.entities.Post;
 import com.matheusHolanda.workshopMongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,4 +55,12 @@ public class UserResource {
         obj = service.update(obj);
         return ResponseEntity.noContent().build();
     }
-}
+
+        @RequestMapping(value = "/{id}/posts", method = RequestMethod.GET)
+        public ResponseEntity<List<Post>> findPosts(@PathVariable String id)
+        { // Método que retorna uma lista de osts de um usuário
+            User obj = service.findById(id);
+            return ResponseEntity.ok().body(obj.getPosts());   // Retorna a lista como resposta
+        }
+    }
+
