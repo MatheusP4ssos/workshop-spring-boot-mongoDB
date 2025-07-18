@@ -73,7 +73,7 @@ spring.data.mongodb.host=localhost
 #### 🔁 Relacionamentos entre documentos (User ↔ Post ↔ Comment)
 
 # Camadas de serviço
-![Camadas](images/camadas.PNG)
+![camadas](images/camadas.PNG)
 
 # Modelo conceitual
 ![modeloConceitual](images/modeloConceitual.PNG)
